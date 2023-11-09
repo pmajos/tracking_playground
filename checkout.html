@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56HH3R39"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56HH3R39"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <h1>Checkout</h1>
@@ -32,5 +32,23 @@
         </div>
         <button type="submit">Place Order</button>
     </form>
+    <script>
+        // Function to fill all input fields with dummy data
+        function fillDummyData() {
+            document.getElementById('name').value = 'John Doe';
+            document.getElementById('address').value = '1234 Apple St, Sample City, 12345';
+            document.getElementById('email').value = 'john.doe@example.com';
+            document.getElementById('phone').value = '123-456-7890';
+        }
+
+        // Add triple click listener to all input elements
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('click', function(event) {
+                if(event.detail === 3) { // Check for triple click
+                    fillDummyData();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
