@@ -21,15 +21,6 @@
             font-size: 2em;
             margin-bottom: 20px;
         }
-        .button {
-            padding: 10px 20px;
-            font-size: 1em;
-            color: white;
-            background-color: black;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
     </style>
     <title>Welcome</title>
     <!-- Google Tag Manager -->
@@ -48,22 +39,6 @@
     
     <div class="container">
         <div class="message">Hi! I'm glad you are here :)</div>
-        <button class="button" onclick="register()">Registration</button>
     </div>
-
-    <script>
-        function register() {
-            // Ensure the dataLayer is initialized
-            window.dataLayer = window.dataLayer || [];
-            // Push the event to the dataLayer
-            window.dataLayer.push({
-                'event': 'registration'
-            });
-            console.log('DataLayer event pushed:', {
-                'event': 'registration'
-            });
-            // No redirection
-        }
-    </script>
 </body>
 </html>
