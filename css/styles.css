@@ -892,6 +892,7 @@ footer {
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .modal.show {
@@ -899,6 +900,7 @@ footer {
     justify-content: center;
     align-items: center;
     opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-content {
