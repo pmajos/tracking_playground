@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Product</title>
-    <link rel='stylesheet' href='css/styles.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ModernStore</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Product Page</h1>
-    <script src='js/scripts.js'></script>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html"><h2>ModernStore</h2></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="category.html">All Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-image">
+                <img id="productImage" src="" alt="">
+            </div>
+            <div class="product-details">
+                <h1 id="productName"></h1>
+                <p class="price" id="productPrice"></p>
+                <p class="description" id="productDescription"></p>
+                
+                <!-- Size Selection -->
+                <div class="product-options">
+                    <h3>Size</h3>
+                    <div class="size-options">
+                        <label class="size-option">
+                            <input type="radio" name="size" value="XS">
+                            <span>XS</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="M">
+                            <span>M</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="L">
+                            <span>L</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="XL">
+                            <span>XL</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="product-options">
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <label class="color-option">
+                            <input type="radio" name="color" value="brown">
+                            <span class="color-circle" style="background-color: #8B4513;"></span>
+                            <span class="color-name">Brown</span>
+                        </label>
+                        <label class="color-option">
+                            <input type="radio" name="color" value="white">
+                            <span class="color-circle" style="background-color: #FFFFFF; border: 1px solid #ddd;"></span>
+                            <span class="color-name">White</span>
+                        </label>
+                        <label class="color-option">
+                            <input type="radio" name="color" value="black">
+                            <span class="color-circle" style="background-color: #000000;"></span>
+                            <span class="color-name">Black</span>
+                        </label>
+                    </div>
+                </div>
+
+                <ul class="details" id="productDetails"></ul>
+                <button class="btn add-to-cart" id="addToCartBtn">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ModernStore. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/product.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
