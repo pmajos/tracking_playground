@@ -66,24 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            if (cartManager.cart.items.length === 0) {
-                showEmptyCartModal();
+            const cart = cartManager.getCart();
+            if (cart.items.length === 0) {
+                const modal = document.getElementById('emptyCartModal');
+                if (modal) {
+                    modal.classList.add('show');
+                    
+                    // Close modal when clicking outside
+                    modal.onclick = (e) => {
+                        if (e.target === modal) {
+                            modal.classList.remove('show');
+                        }
+                    };
+                }
                 return;
             }
             window.location.href = 'checkout.html';
         });
-    }
-
-    function showEmptyCartModal() {
-        const modal = document.getElementById('emptyCartModal');
-        modal.classList.add('show');
-
-        // Close modal when clicking outside
-        modal.onclick = (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('show');
-            }
-        };
     }
 
     // Initial render

@@ -127,15 +127,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-function showEmptyCartModal() {
-    const modal = document.getElementById('emptyCartModal');
-    modal.classList.add('show');
-
-    // Close modal when clicking outside
-    modal.onclick = (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('show');
-        }
-    };
-}
