@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (cart.items.length === 0) {
             cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+            subtotalAmount.textContent = '$0.00';
             return;
         }
 
@@ -65,13 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            // Check if cart is not empty
-            if (cartManager.cart.items.length > 0) {
-                window.location.href = 'checkout.html';
-            } else {
-                alert('Your cart is empty!');
+            if (cartManager.cart.items.length === 0) {
+                showEmptyCartModal();
+                return;
             }
+            window.location.href = 'checkout.html';
         });
+    }
+
+    function showEmptyCartModal() {
+        const modal = document.getElementById('emptyCartModal');
+        modal.classList.add('show');
+
+        // Close modal when clicking outside
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        };
     }
 
     // Initial render

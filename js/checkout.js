@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cart = cartManager.getCart();
         
         if (cart.items.length === 0) {
-            window.location.href = 'cart.html'; // Redirect if cart is empty
+            showEmptyCartModal();
             return;
         }
 
@@ -51,4 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render
     renderOrderSummary();
-}); 
+});
+
+function showEmptyCartModal() {
+    const modal = document.getElementById('emptyCartModal');
+    modal.classList.add('show');
+
+    // Close modal when clicking outside
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            window.location.href = 'cart.html';
+        }
+    };
+} 

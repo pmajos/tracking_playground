@@ -30,6 +30,7 @@ class CartManager {
         }
         
         this.saveCart();
+        this.showModal();
     }
 
     removeItem(itemId) {
@@ -79,6 +80,24 @@ class CartManager {
             cartCount.textContent = this.lastKnownCount;
         }
     }
+
+    showModal() {
+        const modal = document.getElementById('addToCartModal');
+        modal.classList.add('show');
+
+        // Handle continue shopping button
+        const continueBtn = modal.querySelector('.continue-shopping');
+        continueBtn.onclick = () => {
+            modal.classList.remove('show');
+        };
+
+        // Close modal when clicking outside
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        };
+    }
 }
 
 // Initialize cart manager
@@ -105,9 +124,18 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             cartManager.addItem(item);
-            
-            // Optional: Show success message
-            alert('Item added to cart!');
         });
     });
-}); 
+});
+
+function showEmptyCartModal() {
+    const modal = document.getElementById('emptyCartModal');
+    modal.classList.add('show');
+
+    // Close modal when clicking outside
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+        }
+    };
+}
