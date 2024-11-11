@@ -1,3 +1,7 @@
+/**
+ * @version 1.1
+ * Cart management functionality
+ */
 class CartManager {
     constructor() {
         this.cart = this.getCart();

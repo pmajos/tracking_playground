@@ -1,3 +1,7 @@
+/**
+ * @version 1.1
+ * Cart page specific functionality
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.querySelector('.cart-items');
     const subtotalAmount = document.querySelector('.subtotal-amount');
